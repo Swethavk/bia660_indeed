@@ -63,6 +63,12 @@ def jobDescription(jobNameURL):
 
 def makeFolder(jobNameURL, webpage):
     #goal: Make a folder with a title of JobName from the Dict, and paste the webpage in there
+    
+    jobNameURL=soup.findAll("https://"[a-zA-Z0-9]".com") # get all the review divs
+
+    filename=jobNameURL+".txt"
+    
+    with open(filename,'w') as fw:
 
 
     return "success"
