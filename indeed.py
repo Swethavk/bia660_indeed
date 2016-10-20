@@ -63,6 +63,18 @@ def jobDescription(jobNameURL):
 
 def makeFolder(jobNameURL, webpage):
     #goal: Make a folder with a title of JobName from the Dict, and paste the webpage in there
+    soup = run(jobNameURL)
+    
+    joblists=soup.findAll('a', {'div':re.compile('class="sjcl"')}) # get all the review divs
+
+    for joblist in joblists:
+
+        job='NA'
+
+        jobChunk=joblist.find('a',{'data-tn-element':'companyName'})
+        if jobChunk: job=jobChunk.text.encode('ascii','ignore')
+
+        filename=job+".txt"
 
 
     return "success"
